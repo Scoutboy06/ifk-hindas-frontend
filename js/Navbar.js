@@ -1,6 +1,5 @@
 import {
   html,
-  css,
   LitElement,
 } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 
@@ -12,7 +11,9 @@ class Navbar extends LitElement {
 
   render() {
     return html`<nav class="navbar">
-      <img src="/img/emblem.png" alt="IFK Hindås Emblem" class="emblem" />
+      <a href="/" class="emblem">
+        <img src="/img/emblem.png" alt="IFK Hindås Emblem" />
+      </a>
 
       <button title="Toggle navigation visibility" type="button">
         <!-- prettier-ignore -->
