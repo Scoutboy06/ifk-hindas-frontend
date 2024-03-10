@@ -5,9 +5,22 @@
 }
 
 :root {
-  --global-padding: 1rem;
+  --radius: 9999px;
+  --global-padding: 2vw;
 }
 
 body {
   background-color: black;
+  font-family: 'Open Sans', sans-serif;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }

@@ -5,17 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hem - Hindås Schack</title>
     <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="/css/index.css" />
 
     <script type="module" src="/js/Navbar.js" defer></script>
     <link rel="stylesheet" href="/css/Navbar.css" />
 
     <link rel="shortcut icon" href="img/emblem_32.ico" type="image/x-icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
     <div id="container">
-      <c-navbar />
+      <c-navbar></c-navbar>
+
+      <div id="hero">
+        <!-- <img
+          src="/img/hero-image-mobile.jpg"
+          alt="Chess king"
+          srcset="/img/hero-image-desktop.jpg 768w"
+        /> -->
+        <picture>
+          <source
+            srcset="/img/hero-image-desktop.jpg"
+            media="(min-width: 768px)"
+          />
+          <img
+            class="backdrop"
+            src="/img/hero-image-mobile.jpg"
+            alt="Chess king"
+          />
+        </picture>
+
+        <div class="text">
+          <h1>
+            Schackträning för<br />
+            barn och unga
+          </h1>
+
+          <p>
+            Från nybörjare till turneringsspelare:<br />
+            Våra coacher guidar dig på varje steg
+          </p>
+
+          <a href="#" class="btn">Prova på gratis</a>
+        </div>
+      </div>
     </div>
   </body>
 </html>
