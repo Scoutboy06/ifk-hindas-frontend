@@ -4,22 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="css/globals.css" />
+
+    <script type="module" src="/js/Navbar.js" defer></script>
+    <link rel="stylesheet" href="/css/Navbar.css" />
   </head>
   <body>
-    <div id="app">{{ message }}</div>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
 
-    <script>
-      const { createApp, ref } = Vue;
-
-      createApp({
-        setup() {
-          const message = ref('Hello vue!');
-          return {
-            message,
-          };
-        },
-      }).mount('#app');
-    </script>
+    <div id="app">
+      <c-navbar />
+    </div>
   </body>
 </html>

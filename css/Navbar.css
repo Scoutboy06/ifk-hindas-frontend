@@ -1,0 +1,23 @@
+.navbar {
+  height: 64px;
+  padding: 8px var(--global-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  .emblem {
+    height: 100%;
+  }
+
+  & > button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+
+    & > svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
