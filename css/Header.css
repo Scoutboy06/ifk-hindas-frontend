@@ -1,10 +1,19 @@
-.navbar {
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
   height: 64px;
   padding: 8px var(--global-padding);
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
+
+  &.scrolled {
+    background-color: #000;
+  }
 
   .emblem,
   .emblem img {
