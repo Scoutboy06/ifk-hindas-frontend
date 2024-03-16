@@ -1,8 +1,6 @@
 #hero {
   position: relative;
-  display: grid;
-  place-items: center;
-  height: calc(100vh - 64px);
+  height: 100vh;
 
   .backdrop {
     width: 100%;
@@ -12,9 +10,13 @@
   }
 
   .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
     color: #fff;
     text-align: center;
-    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,11 +41,18 @@
   }
 }
 
-@media screen and (min-width: 768px) {
-  #hero .text {
-    left: var(--global-padding);
-    text-align: left;
-    align-items: start;
+@media screen and (min-width: 425px) {
+  #hero {
+    .backdrop {
+      object-position: right;
+    }
+
+    .text {
+      left: var(--global-padding);
+      text-align: left;
+      align-items: start;
+      transform: translate(0, -50%);
+    }
   }
 }
 

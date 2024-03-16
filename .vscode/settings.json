@@ -1,3 +1,6 @@
 {
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
   "liveServer.settings.file": "404.html"
 }

@@ -3,14 +3,37 @@ import {
   LitElement,
 } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 
-class Navbar extends LitElement {
+class Header extends LitElement {
+  static properties = {
+    isScrolled: { type: Boolean, state: true },
+  };
+
+  constructor() {
+    super();
+    this.isScrolled = false;
+  }
+
   createRenderRoot() {
     // Disable Shadow DOM
     return this;
   }
 
+  connectedCallback() {
+    super.connectedCallback();
+    window.addEventListener('scroll', this._handleScroll.bind(this));
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    window.removeEventListener('scroll', this._handleScroll.bind(this));
+  }
+
+  _handleScroll() {
+    this.isScrolled = window.scrollY > 0;
+  }
+
   render() {
-    return html`<nav class="navbar">
+    return html`<header class="header${this.isScrolled ? ' scrolled' : ''}">
       <a href="/" class="emblem">
         <img src="/img/emblem.png" alt="IFK Hindås Emblem" />
       </a>
@@ -19,8 +42,8 @@ class Navbar extends LitElement {
         <!-- prettier-ignore -->
         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path fill="#fff" d="M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z"/></svg>
       </button>
-    </nav>`;
+    </header>`;
   }
 }
 
-customElements.define('c-navbar', Navbar);
+customElements.define('c-header', Header);
