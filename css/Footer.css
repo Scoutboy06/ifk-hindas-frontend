@@ -20,8 +20,8 @@
     &::after {
       content: '';
       width: 75px;
-      height: 1px;
-      background-color: #fff;
+      height: 2px;
+      background-color: #000;
       position: absolute;
       left: 0;
       bottom: 0;
@@ -81,6 +81,7 @@
   }
 }
 
+/* >= Laptop */
 @media screen and (min-width: 1024px) {
   #footer {
     grid-template-areas:

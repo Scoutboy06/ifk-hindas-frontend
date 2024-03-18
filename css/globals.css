@@ -5,13 +5,17 @@
 }
 
 :root {
+  --primary: hsl(205, 100%, 35%);
+  --primary-hover: hsl(205, 100%, 30%);
+  --on-primary: #fff;
+
   --radius: 8px;
   --global-padding: max(24px, calc(50vw - 540px));
 }
 
 body {
-  background-color: black;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   font-family: 'Open Sans', sans-serif;
 }
 

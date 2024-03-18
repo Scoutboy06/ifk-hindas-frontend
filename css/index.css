@@ -1,12 +1,21 @@
 #hero {
   position: relative;
-  height: calc(100vh - 64px);
+  height: 650px;
 
-  .backdrop {
-    width: 100%;
+  .backdrop-container {
     height: 100%;
-    object-fit: cover;
-    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+
+    .backdrop {
+      height: 100%;
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      pointer-events: none;
+    }
   }
 
   .text {
@@ -29,21 +38,26 @@
   }
 
   .btn {
-    border: 2px solid #fff;
+    border: 0;
     border-radius: var(--radius);
-    padding: 0.5rem 2rem;
+    padding: 0.7rem 2rem;
     transition: background-color 0.3s, color 0.3s;
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
 
     &:hover {
-      background-color: #fff;
-      color: #000;
+      background-color: var(--primary-hover);
     }
   }
 }
 
+/* >= Mobile L */
 @media screen and (min-width: 425px) {
   #hero {
-    .backdrop {
+    .backdrop-container .backdrop {
+      width: 100%;
       object-position: right;
     }
 
@@ -56,7 +70,8 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+/* Change title font size */
+@media screen and (min-width: 750px) {
   #hero .text {
     & h1 {
       font-size: 3rem;
@@ -67,4 +82,15 @@
       font-size: 1.2rem;
     }
   }
+}
+
+/* Hero section image */
+@media screen and (min-width: 975px) {
+  #hero .backdrop {
+    object-position: center;
+  }
+}
+
+/* >= Laptop */
+@media screen and (min-width: 1024px) {
 }

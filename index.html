@@ -18,12 +18,6 @@
       rel="stylesheet"
     />
 
-    <!-- Icons -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
-    />
-
     <!-- Header -->
     <script type="module" src="/js/Header.js" defer></script>
     <link rel="stylesheet" href="/css/Header.css" />
@@ -39,17 +33,19 @@
       <c-header></c-header>
 
       <div id="hero">
-        <picture>
-          <source
-            srcset="/img/hero-image-desktop.jpg"
-            media="(min-width: 425px)"
-          />
-          <img
-            class="backdrop"
-            src="/img/hero-image-mobile.jpg"
-            alt="Chess king"
-          />
-        </picture>
+        <div class="backdrop-container">
+          <picture>
+            <source
+              srcset="/img/hero-image-desktop.jpg"
+              media="(min-width: 425px)"
+            />
+            <img
+              class="backdrop"
+              src="/img/hero-image-mobile.jpg"
+              alt="Chess king"
+            />
+          </picture>
+        </div>
 
         <div class="text">
           <h1>
@@ -62,9 +58,15 @@
             Våra coacher guidar dig på varje steg
           </p>
 
-          <a href="#" class="btn">Prova på gratis</a>
+          <a href="#" class="btn"
+            >Prova på gratis
+            <!-- prettier-ignore -->
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path fill="#fff" d="M646-440H200q-17 0-28.5-11.5T160-480q0-17 11.5-28.5T200-520h446L532-634q-12-12-11.5-28t11.5-28q12-12 28.5-12.5T589-691l183 183q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L589-269q-12 12-28.5 11.5T532-270q-11-12-11.5-28t11.5-28l114-114Z"/></svg>
+          </a>
         </div>
       </div>
+
+      <div style="height: 400px"></div>
 
       <c-footer></c-footer>
     </div>
