@@ -5,8 +5,8 @@
 }
 
 :root {
-  --radius: 9999px;
-  --global-padding: 2vw;
+  --radius: 8px;
+  --global-padding: max(24px, calc(50vw - 540px));
 }
 
 body {
@@ -19,6 +19,7 @@ button {
   cursor: pointer;
   background-color: transparent;
   border: 0;
+  font: inherit;
 }
 
 a {
