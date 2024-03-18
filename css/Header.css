@@ -1,5 +1,5 @@
 .header {
-  height: 64px;
+  height: 96px;
   padding-inline: var(--global-padding);
   display: flex;
   align-items: center;
@@ -10,7 +10,7 @@
 
   .emblem,
   .emblem img {
-    height: 48px;
+    height: 64px;
   }
 
   .sidebar-toggle > svg {

@@ -7,6 +7,26 @@
     display: flex;
     justify-content: center;
     background-color: #000;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      height: 100%;
+      width: 50px;
+    }
+
+    &::before {
+      left: 0;
+      transform: translateX(100%);
+      background-image: linear-gradient(to right, #000f, transparent);
+    }
+
+    &::after {
+      right: 0;
+      transform: translateX(-100%);
+      background-image: linear-gradient(to left, #000f, transparent);
+    }
 
     .backdrop {
       height: 100%;
