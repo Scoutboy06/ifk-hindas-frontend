@@ -19,13 +19,13 @@
     &::before {
       left: 0;
       transform: translateX(100%);
-      background-image: linear-gradient(to right, #000f, transparent);
+      background-image: linear-gradient(to right, #000, transparent);
     }
 
     &::after {
       right: 0;
       transform: translateX(-100%);
-      background-image: linear-gradient(to left, #000f, transparent);
+      background-image: linear-gradient(to left, #000, transparent);
     }
 
     .backdrop {
@@ -76,11 +76,15 @@ section {
   min-height: 450px;
   padding: 50px var(--global-padding);
 
+  & h2 {
+    font-size: 2.5rem;
+  }
+
   &:nth-child(odd) {
     background-color: #f4f4f4;
   }
 
-  /* Upplev spänning en i schack */
+  /* Upplev spänningen i schack */
   &:nth-of-type(1) {
     display: grid;
     grid-template-columns: 1fr;
@@ -99,9 +103,41 @@ section {
       width: 100%;
       height: auto;
     }
+  }
 
+  /* Våra träningar */
+  &:nth-of-type(2) {
     & h2 {
-      font-size: 2.5rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem 1rem;
+      align-items: center;
+
+      .card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 1.25rem;
+
+        & img {
+          width: 100%;
+        }
+
+        & h3 {
+          font-size: 1.5rem;
+        }
+
+        & span {
+          color: #696969;
+          font-size: 0.9rem;
+        }
+      }
     }
   }
 }
@@ -147,9 +183,24 @@ section {
 /* >= Laptop */
 @media screen and (min-width: 1024px) {
   section {
-    /* Upplev spänning en i schack */
+    /* Upplev spänningen i schack */
     &:nth-of-type(1) {
       grid-template-columns: 1fr 1fr;
+    }
+
+    /* Våra träningar */
+    &:nth-of-type(2) {
+      .cards-container {
+        flex-direction: row;
+        align-items: start;
+
+        & span {
+          line-height: 1.5rem;
+          height: 3rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
     }
   }
 }
