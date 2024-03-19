@@ -73,7 +73,6 @@
 }
 
 section {
-  min-height: 450px;
   padding: 50px var(--global-padding);
 
   & h2 {
@@ -138,6 +137,63 @@ section {
           font-size: 0.9rem;
         }
       }
+    }
+  }
+
+  /* 15 års erfarenhet */
+  &:nth-of-type(3) {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding-block: 8rem 6rem;
+
+    .col.years-experience {
+      position: relative;
+      padding: 1rem;
+
+      .bracket {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: calc(100% / 3);
+        border: 7px solid #ddd;
+
+        &:nth-child(1) {
+          left: 0;
+          border-right-width: 0;
+        }
+
+        &:nth-child(2) {
+          right: 0;
+          border-left-width: 0;
+        }
+      }
+
+      .text {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        gap: 0.6rem;
+
+        .years {
+          color: var(--secondary);
+          font-size: 4rem;
+        }
+      }
+    }
+
+    .col.title h2 {
+      font-size: 2.25rem;
+      font-weight: bold;
+      width: 16rem;
+    }
+
+    .col.text {
+      width: 18rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      align-items: end;
     }
   }
 }
