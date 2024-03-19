@@ -35,7 +35,7 @@ class Header extends LitElement {
   render() {
     return html`<header class="header${this.isScrolled ? ' scrolled' : ''}">
       <a href="/" class="emblem">
-        <img src="/img/emblem.png" alt="IFK Hindås Emblem" />
+        <img src="img/emblem.png" alt="IFK Hindås Emblem" />
       </a>
 
       <button
