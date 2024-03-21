@@ -388,6 +388,19 @@ section {
       border-bottom: 0;
     }
   }
+
+  /* Våra träningar */
+  #our-trainings .cards-container {
+    flex-direction: row;
+    align-items: start;
+
+    & span {
+      line-height: 1.5rem;
+      height: 3rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
 }
 
 /* Hero section change */
@@ -442,18 +455,5 @@ section {
   /* Upplev spänningen i schack */
   #chess-excitement {
     grid-template-columns: 1fr 1fr;
-  }
-
-  /* Våra träningar */
-  #our-trainings .cards-container {
-    flex-direction: row;
-    align-items: start;
-
-    & span {
-      line-height: 1.5rem;
-      height: 3rem;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
   }
 }
