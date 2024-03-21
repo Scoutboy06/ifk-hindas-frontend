@@ -82,118 +82,228 @@ section {
   &:nth-child(odd) {
     background-color: #f4f4f4;
   }
+}
+/* Upplev spänningen i schack */
+#chess-excitement {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content max-content;
+  gap: 2rem;
 
-  /* Upplev spänningen i schack */
-  &:nth-of-type(1) {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: max-content max-content;
-    gap: 2rem;
+  .left {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2.5rem;
+  }
 
-    .left {
+  .right,
+  .right img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Våra träningar */
+#our-trainings {
+  & h2 {
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem 1rem;
+    align-items: center;
+
+    .card {
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: start;
-      gap: 2.5rem;
+      gap: 1.25rem;
+
+      & img {
+        width: 100%;
+      }
+
+      & h3 {
+        font-size: 1.5rem;
+      }
+
+      & span {
+        color: #696969;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+/* 15 års erfarenhet */
+#experience {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  padding-block: 8rem 6rem;
+
+  .col.years-experience {
+    position: relative;
+    padding: 1rem;
+
+    .bracket {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: calc(100% / 3);
+      border: 7px solid #ddd;
+
+      &:nth-child(1) {
+        left: 0;
+        border-right-width: 0;
+      }
+
+      &:nth-child(2) {
+        right: 0;
+        border-left-width: 0;
+      }
     }
 
-    .right,
-    .right img {
-      width: 100%;
-      height: auto;
+    .text {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      gap: 0.6rem;
+
+      .years {
+        color: var(--secondary);
+        font-size: 4rem;
+      }
     }
   }
 
-  /* Våra träningar */
-  &:nth-of-type(2) {
-    & h2 {
-      margin-bottom: 2.5rem;
-      text-align: center;
+  .col.title h2 {
+    font-size: 2.25rem;
+    font-weight: bold;
+    width: 16rem;
+  }
+
+  .col.text {
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: end;
+  }
+}
+
+/* Nyheter */
+#news {
+  & h2 {
+    margin-bottom: 2.5rem;
+  }
+
+  .news-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: unset;
+    column-gap: 2rem;
+    row-gap: 1rem;
+
+    & article {
+      padding-bottom: 13px;
+      border-bottom: 2px solid #dbe4ed;
     }
 
-    .cards-container {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem 1rem;
-      align-items: center;
+    & article {
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-template-columns: 6rem 1fr max-content;
+      gap: 0.6rem 0.8rem;
 
-      .card {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        gap: 1.25rem;
+      &:first-child {
+        grid-column: 1 / 1;
+
+        .banner {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .banner {
+        grid-row: 1 / -1;
+        cursor: pointer;
+        height: 4rem;
+        aspect-ratio: 1.5;
+        overflow: hidden;
 
         & img {
           width: 100%;
-        }
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.3s ease-in-out;
 
-        & h3 {
-          font-size: 1.5rem;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .title {
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        grid-column: 2 / 4;
+
+        & a:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .desc {
+        display: none;
+      }
+
+      .author {
+        display: grid;
+        grid-template-columns: max-content auto;
+        align-items: center;
+        gap: 0.4rem;
+
+        & img {
+          height: 28px;
+          width: 28px;
+          min-width: 28px;
+          border-radius: 50%;
+          overflow: hidden;
         }
 
         & span {
-          color: #696969;
-          font-size: 0.9rem;
-        }
-      }
-    }
-  }
-
-  /* 15 års erfarenhet */
-  &:nth-of-type(3) {
-    display: flex;
-    align-items: start;
-    justify-content: space-between;
-    padding-block: 8rem 6rem;
-
-    .col.years-experience {
-      position: relative;
-      padding: 1rem;
-
-      .bracket {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: calc(100% / 3);
-        border: 7px solid #ddd;
-
-        &:nth-child(1) {
-          left: 0;
-          border-right-width: 0;
-        }
-
-        &:nth-child(2) {
-          right: 0;
-          border-left-width: 0;
+          font-size: 0.8rem;
+          text-wrap: nowrap;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
         }
       }
 
-      .text {
+      .timestamp {
+        justify-self: end;
         display: flex;
         align-items: center;
-        font-weight: bold;
-        gap: 0.6rem;
+        gap: 0.2rem;
+        color: #696969;
 
-        .years {
-          color: var(--secondary);
-          font-size: 4rem;
+        .icon {
+          font-size: 0.75rem;
+          padding-top: 1px;
+        }
+
+        & span {
+          font-size: 0.75rem;
         }
       }
-    }
-
-    .col.title h2 {
-      font-size: 2.25rem;
-      font-weight: bold;
-      width: 16rem;
-    }
-
-    .col.text {
-      width: 18rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-      align-items: end;
     }
   }
 }
@@ -213,10 +323,25 @@ section {
       transform: translate(0, -50%);
     }
   }
+
+  #news .news-container article {
+    .author span {
+      font-size: 0.9rem;
+    }
+
+    .timestamp .icon,
+    .timestamp span {
+      font-size: 0.9rem;
+    }
+
+    .timestamp .icon {
+      padding-top: 2px;
+    }
+  }
 }
 
-/* Change title font size */
-@media screen and (min-width: 750px) {
+/* >= Tablet */
+@media screen and (min-width: 768px) {
   #hero .text {
     & h1 {
       font-size: 3rem;
@@ -225,6 +350,43 @@ section {
     & p,
     .btn {
       font-size: 1.2rem;
+    }
+  }
+
+  #news .news-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(5, 1fr);
+
+    & article:not(:first-child) {
+      padding-bottom: 13px;
+    }
+
+    & article:first-child {
+      grid-row: 1 / -1;
+      grid-template-rows: repeat(3, min-content) auto;
+      grid-template-columns: 1fr 1fr;
+
+      .banner {
+        grid-column: 1 / 3;
+        grid-row: 1 / 1;
+
+        & img:hover {
+          transform: scale(1.05);
+        }
+      }
+
+      .title {
+        grid-column: 1 / 3;
+        grid-row: 2 / 2;
+      }
+
+      .author {
+        grid-row: 3 / 3;
+      }
+    }
+
+    & article:first-child {
+      border-bottom: 0;
     }
   }
 }
@@ -238,25 +400,21 @@ section {
 
 /* >= Laptop */
 @media screen and (min-width: 1024px) {
-  section {
-    /* Upplev spänningen i schack */
-    &:nth-of-type(1) {
-      grid-template-columns: 1fr 1fr;
-    }
+  /* Upplev spänningen i schack */
+  #chess-excitement {
+    grid-template-columns: 1fr 1fr;
+  }
 
-    /* Våra träningar */
-    &:nth-of-type(2) {
-      .cards-container {
-        flex-direction: row;
-        align-items: start;
+  /* Våra träningar */
+  #our-trainings .cards-container {
+    flex-direction: row;
+    align-items: start;
 
-        & span {
-          line-height: 1.5rem;
-          height: 3rem;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-      }
+    & span {
+      line-height: 1.5rem;
+      height: 3rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }
