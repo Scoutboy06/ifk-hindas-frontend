@@ -3,6 +3,5 @@
     "javascript": "javascriptreact"
   },
   "liveServer.settings.file": "404.html",
-  "liveServer.settings.multiRootWorkspaceName": "ifk_hindas",
-  "liveServer.settings.port": 5501
+  "liveServer.settings.multiRootWorkspaceName": "ifk_hindas"
 }
