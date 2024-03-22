@@ -32,6 +32,18 @@ class Header extends LitElement {
     this.isScrolled = window.scrollY > 0;
   }
 
+  /**
+   * @param {String} path The URL of the link
+   * @param {String} text The text contents of the f
+   */
+  renderNavItem(path, text) {
+    return html`<li
+      class="nav-item ${window.location.pathname == path ? 'active' : ''}"
+    >
+      <a href="${path}">${text}</a>
+    </li>`;
+  }
+
   render() {
     return html`<header class="header${this.isScrolled ? ' scrolled' : ''}">
       <a href="/" class="emblem">
@@ -49,17 +61,16 @@ class Header extends LitElement {
 
       <nav class="top-nav">
         <ul>
-          <li class="nav-item"><a href="/">Hem</a></li>
+          ${this.renderNavItem('/', 'Hem')}
           <li class="nav-item">
             <button type="button">
               Träna med oss
-              <!-- prettier-ignore -->
-              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-362q-8 0-15-2.5t-13-8.5L268-557q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-373q-6 6-13 8.5t-15 2.5Z"/></svg>
+              <i class="icon">expand_more</i>
             </button>
           </li>
-          <li class="nav-item"><a href="/om-klubben">Om klubben</a></li>
-          <li class="nav-item"><a href="/nyheter">Nyheter</a></li>
-          <li class="nav-item"><a href="/kontakt">Kontakt</a></li>
+          ${this.renderNavItem('/om-klubben', 'Om klubben')}
+          ${this.renderNavItem('/nyheter', 'Nyheter')}
+          ${this.renderNavItem('/kontakt', 'Kontakt')}
         </ul>
       </nav>
     </header>`;
