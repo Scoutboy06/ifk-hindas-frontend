@@ -101,7 +101,7 @@ class Header extends LitElement {
             { text: 'Klubbmästare', path: '/klubbmastare' },
           ])}
           ${this._renderNavItem('/nyheter', 'Nyheter')}
-          ${this._renderNavItem('/kontakt', 'Kontakt')}
+          ${this._renderNavItem('/kontakt.html', 'Kontakt')}
         </ul>
       </nav>
 
@@ -124,7 +124,7 @@ class Header extends LitElement {
             { text: 'Klubbmästare', path: '/klubbmastare' },
           ])}
           ${this._renderNavItem('/nyheter', 'Nyheter')}
-          ${this._renderNavItem('/kontakt', 'Kontakt')}
+          ${this._renderNavItem('/kontakt.html', 'Kontakt')}
         </ul>
       </nav>
     </header>`;
