@@ -37,4 +37,8 @@
   & p {
     padding-block: 0.4rem;
   }
+
+  & ul {
+    padding-left: 1rem;
+  }
 }
