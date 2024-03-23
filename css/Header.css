@@ -95,7 +95,7 @@
       gap: 0.4rem;
       height: 100%;
 
-      .nav-item {
+      & > .nav-item {
         display: flex;
         align-items: center;
         height: 100%;
