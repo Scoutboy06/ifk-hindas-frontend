@@ -1,0 +1,40 @@
+#hero {
+  height: 16rem;
+  position: relative;
+  display: grid;
+  place-items: center;
+
+  .backdrop-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: -1;
+
+    .backdrop {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+
+  .text-container {
+    color: #fff;
+    font-size: 2.5rem;
+  }
+}
+
+#text {
+  padding: 2rem var(--global-padding);
+
+  & h2 {
+    padding-block: 1.2rem 0.4rem;
+  }
+
+  & p {
+    padding-block: 0.4rem;
+  }
+}
