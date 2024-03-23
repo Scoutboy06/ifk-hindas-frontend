@@ -10,20 +10,21 @@ class Header extends LitElement {
   }
 
   /**
-   * @param {string} path The URL of the anchor tag
-   * @param {string} text The text that is to be displayed
+   * @param {{ path: string, text: string, disabled?: boolean }}
    */
-  _renderNavItem(path, text) {
+  _renderNavItem({ path, text, disabled }) {
     return html`<li
       class="nav-item ${window.location.pathname == path ? 'active' : ''}"
     >
-      <a href="${path}">${text}</a>
+      <a href="${path}" disabled="${disabled === true ? 'true' : 'false'}">
+        ${text}
+      </a>
     </li>`;
   }
 
   /**
    * @param {string} buttonText The text to display in the button
-   * @param {{ text: string, path: string, openInNew?: boolean }[]} paths The paths
+   * @param {{ text: string, path: string, openInNew?: boolean, disabled?: boolean }[]} paths The paths
    */
   _renderDropdownItem(buttonText, paths) {
     return html`<li class="nav-item">
@@ -33,14 +34,18 @@ class Header extends LitElement {
 
       <ul class="dropdown">
         ${paths.map(
-          ({ text, path, openInNew }) => html`<li
+          ({ text, path, openInNew, disabled }) => html`<li
             class="nav-item ${window.location.pathname === path
               ? 'active'
               : ''}"
           >
-            <a href="${path}" target="${openInNew ? '_blank' : '_self'}"
-              >${text}</a
+            <a
+              href="${path}"
+              target="${openInNew ? '_blank' : '_self'}"
+              disabled="${disabled === true ? 'true' : 'false'}"
             >
+              ${text}
+            </a>
           </li>`
         )}
       </ul>
@@ -84,47 +89,55 @@ class Header extends LitElement {
 
       <nav class="mobile-nav">
         <ul>
-          ${this._renderNavItem('/', 'Hem')}
+          ${this._renderNavItem({ path: '/', text: 'Hem' })}
           ${this._renderDropdownItem('Träna med oss', [
-            { text: 'Nybörjare', path: '/nyborjare' },
-            { text: 'Erfarna', path: '/erfarna' },
-            { text: 'Avancerat', path: '/avancerat' },
+            { text: 'Nybörjare', path: '/nyborjare', disabled: true },
+            { text: 'Erfarna', path: '/erfarna', disabled: true },
+            { text: 'Avancerat', path: '/avancerat', disabled: true },
           ])}
           ${this._renderDropdownItem('Om klubben', [
             { text: 'Historia', path: '/historia.html' },
-            { text: 'Gamla resultat', path: '/gamla-resultat' },
+            { text: 'Gamla resultat', path: '/gamla-resultat', disabled: true },
             {
               text: html`Rankinglista <i class="icon">open_in_new</i>`,
               path: 'https://member.schack.se/ShowClubRatingServlet?clubid=38616',
               openInNew: true,
             },
-            { text: 'Klubbmästare', path: '/klubbmastare' },
+            { text: 'Klubbmästare', path: '/klubbmastare', disabled: true },
           ])}
-          ${this._renderNavItem('/nyheter', 'Nyheter')}
-          ${this._renderNavItem('/kontakt.html', 'Kontakt')}
+          ${this._renderNavItem({
+            path: '/nyheter',
+            text: 'Nyheter',
+            disabled: true,
+          })}
+          ${this._renderNavItem({ path: '/kontakt.html', text: 'Kontakt' })}
         </ul>
       </nav>
 
       <nav class="top-nav">
         <ul>
-          ${this._renderNavItem('/', 'Hem')}
+          ${this._renderNavItem({ path: '/', text: 'Hem' })}
           ${this._renderDropdownItem('Träna med oss', [
-            { text: 'Nybörjare', path: '/nyborjare' },
-            { text: 'Erfarna', path: '/erfarna' },
-            { text: 'Avancerat', path: '/avancerat' },
+            { text: 'Nybörjare', path: '/nyborjare', disabled: true },
+            { text: 'Erfarna', path: '/erfarna', disabled: true },
+            { text: 'Avancerat', path: '/avancerat', disabled: true },
           ])}
           ${this._renderDropdownItem('Om klubben', [
             { text: 'Historia', path: '/historia.html' },
-            { text: 'Gamla resultat', path: '/gamla-resultat' },
+            { text: 'Gamla resultat', path: '/gamla-resultat', disabled: true },
             {
               text: html`Rankinglista <i class="icon">open_in_new</i>`,
               path: 'https://member.schack.se/ShowClubRatingServlet?clubid=38616',
               openInNew: true,
             },
-            { text: 'Klubbmästare', path: '/klubbmastare' },
+            { text: 'Klubbmästare', path: '/klubbmastare', disabled: true },
           ])}
-          ${this._renderNavItem('/nyheter', 'Nyheter')}
-          ${this._renderNavItem('/kontakt.html', 'Kontakt')}
+          ${this._renderNavItem({
+            path: '/nyheter',
+            text: 'Nyheter',
+            disabled: true,
+          })}
+          ${this._renderNavItem({ path: '/kontakt.html', text: 'Kontakt' })}
         </ul>
       </nav>
     </header>`;
