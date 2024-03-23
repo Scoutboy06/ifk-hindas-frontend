@@ -4,32 +4,9 @@ import {
 } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 
 class Header extends LitElement {
-  static properties = {
-    isScrolled: { type: Boolean, state: true },
-  };
-
-  constructor() {
-    super();
-    this.isScrolled = false;
-  }
-
   createRenderRoot() {
     // Disable Shadow DOM
     return this;
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-    window.addEventListener('scroll', this._handleScroll.bind(this));
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
-    window.removeEventListener('scroll', this._handleScroll.bind(this));
-  }
-
-  _handleScroll() {
-    this.isScrolled = window.scrollY > 0;
   }
 
   /**
