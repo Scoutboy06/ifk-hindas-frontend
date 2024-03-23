@@ -22,7 +22,7 @@
     display: none;
     height: 100%;
 
-    & ul {
+    & > ul {
       list-style: none;
       display: flex;
       gap: 0.4rem;
@@ -72,6 +72,42 @@
             font-size: 30px;
             padding-top: 2px;
           }
+        }
+
+        .dropdown {
+          visibility: hidden;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transform: translateY(100%);
+          z-index: 3;
+          background-color: #fff;
+          list-style-type: none;
+          padding: 0.8rem 0.6rem;
+          width: max-content;
+          color: #000;
+
+          & > li {
+            padding: 0.6rem 1.6rem;
+
+            &:hover {
+              color: var(--secondary);
+            }
+
+            & > a {
+              display: flex;
+              align-items: center;
+              gap: 0.4rem;
+            }
+
+            .icon {
+              font-size: 18px;
+            }
+          }
+        }
+
+        &:hover .dropdown {
+          visibility: visible;
         }
       }
     }

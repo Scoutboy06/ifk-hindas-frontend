@@ -39,13 +39,45 @@ class Header extends LitElement {
       <nav class="top-nav">
         <ul>
           ${this.renderNavItem('/', 'Hem')}
+
           <li class="nav-item">
             <button type="button">
               Träna med oss
               <i class="icon">expand_more</i>
             </button>
+
+            <ul class="dropdown">
+              <li><a href="/nyborjare">Nybörjare</a></li>
+              <li><a href="/erfarna">Erfarna</a></li>
+              <li><a href="/avancerat">Avancerat</a></li>
+            </ul>
           </li>
-          ${this.renderNavItem('/om-klubben', 'Om klubben')}
+
+          <li class="nav-item">
+            <button type="button">
+              Om klubben
+              <i class="icon">expand_more</i>
+            </button>
+
+            <ul class="dropdown">
+              <li><a href="/historia">Historia</a></li>
+              <li>
+                <a href="/gamla-resultat">Gamla resultat</a>
+              </li>
+              <li>
+                <a
+                  href="https://member.schack.se/ShowClubRatingServlet?clubid=38616"
+                  target="_blank"
+                >
+                  Rankinglista <i class="icon">open_in_new</i>
+                </a>
+              </li>
+              <li>
+                <a href="/klubbmastare">Klubbmästare</a>
+              </li>
+            </ul>
+          </li>
+
           ${this.renderNavItem('/nyheter', 'Nyheter')}
           ${this.renderNavItem('/kontakt', 'Kontakt')}
         </ul>
