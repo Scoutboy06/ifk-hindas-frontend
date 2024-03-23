@@ -10,10 +10,10 @@ class Header extends LitElement {
   }
 
   /**
-   * @param {String} path The URL of the link
-   * @param {String} text The text contents of the f
+   * @param {string} path The URL of the anchor tag
+   * @param {string} text The text that is to be displayed
    */
-  renderNavItem(path, text) {
+  _renderNavItem(path, text) {
     return html`<li
       class="nav-item ${window.location.pathname == path ? 'active' : ''}"
     >
@@ -21,65 +21,110 @@ class Header extends LitElement {
     </li>`;
   }
 
+  /**
+   * @param {string} buttonText The text to display in the button
+   * @param {{ text: string, path: string, openInNew?: boolean }[]} paths The paths
+   */
+  _renderDropdownItem(buttonText, paths) {
+    return html`<li class="nav-item">
+      <button type="button" @click="${this._handleMobileDropdownToggle}">
+        ${buttonText} <i class="icon">expand_more</i>
+      </button>
+
+      <ul class="dropdown">
+        ${paths.map(
+          ({ text, path, openInNew }) => html`<li
+            class="nav-item ${window.location.pathname === path
+              ? 'active'
+              : ''}"
+          >
+            <a href="${path}" target="${openInNew ? '_blank' : '_self'}"
+              >${text}</a
+            >
+          </li>`
+        )}
+      </ul>
+    </li>`;
+  }
+
+  /**
+   * @param {PointerEvent} e
+   */
+  _handleMobileDropdownToggle(e) {
+    let target = e.target;
+    if (target.localName === 'i') target = target.parentElement;
+    const dropdown = target.nextElementSibling;
+    dropdown.classList.toggle('open');
+  }
+
+  /**
+   * @param {PointerEvent} e
+   */
+  _toggleMobileNav(e) {
+    let target = e.target;
+    if (target.localName === 'i') target = target.parentElement;
+    const mobileNav = target.nextElementSibling;
+    mobileNav.classList.toggle('visible');
+  }
+
   render() {
-    return html`<header class="header${this.isScrolled ? ' scrolled' : ''}">
+    return html`<header class="header">
       <a href="/" class="emblem">
         <img src="img/emblem.png" alt="IFK Hindås Emblem" />
       </a>
 
       <button
+        @click="${this._toggleMobileNav}"
         class="sidebar-toggle"
         title="Toggle navigation visibility"
         type="button"
       >
-        <!-- prettier-ignore -->
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path fill="#000" d="M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z"/></svg>
+        <i class="icon">menu</i>
       </button>
+
+      <nav class="mobile-nav">
+        <ul>
+          ${this._renderNavItem('/', 'Hem')}
+          ${this._renderDropdownItem('Träna med oss', [
+            { text: 'Nybörjare', path: '/nyborjare' },
+            { text: 'Erfarna', path: '/erfarna' },
+            { text: 'Avancerat', path: '/avancerat' },
+          ])}
+          ${this._renderDropdownItem('Om klubben', [
+            { text: 'Historia', path: '/historia.html' },
+            { text: 'Gamla resultat', path: '/gamla-resultat' },
+            {
+              text: html`Rankinglista <i class="icon">open_in_new</i>`,
+              path: 'https://member.schack.se/ShowClubRatingServlet?clubid=38616',
+              openInNew: true,
+            },
+            { text: 'Klubbmästare', path: '/klubbmastare' },
+          ])}
+          ${this._renderNavItem('/nyheter', 'Nyheter')}
+          ${this._renderNavItem('/kontakt', 'Kontakt')}
+        </ul>
+      </nav>
 
       <nav class="top-nav">
         <ul>
-          ${this.renderNavItem('/', 'Hem')}
-
-          <li class="nav-item">
-            <button type="button">
-              Träna med oss
-              <i class="icon">expand_more</i>
-            </button>
-
-            <ul class="dropdown">
-              <li><a href="/nyborjare">Nybörjare</a></li>
-              <li><a href="/erfarna">Erfarna</a></li>
-              <li><a href="/avancerat">Avancerat</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item">
-            <button type="button">
-              Om klubben
-              <i class="icon">expand_more</i>
-            </button>
-
-            <ul class="dropdown">
-              <li><a href="/historia">Historia</a></li>
-              <li>
-                <a href="/gamla-resultat">Gamla resultat</a>
-              </li>
-              <li>
-                <a
-                  href="https://member.schack.se/ShowClubRatingServlet?clubid=38616"
-                  target="_blank"
-                >
-                  Rankinglista <i class="icon">open_in_new</i>
-                </a>
-              </li>
-              <li>
-                <a href="/klubbmastare">Klubbmästare</a>
-              </li>
-            </ul>
-          </li>
-
-          ${this.renderNavItem('/nyheter', 'Nyheter')}
-          ${this.renderNavItem('/kontakt', 'Kontakt')}
+          ${this._renderNavItem('/', 'Hem')}
+          ${this._renderDropdownItem('Träna med oss', [
+            { text: 'Nybörjare', path: '/nyborjare' },
+            { text: 'Erfarna', path: '/erfarna' },
+            { text: 'Avancerat', path: '/avancerat' },
+          ])}
+          ${this._renderDropdownItem('Om klubben', [
+            { text: 'Historia', path: '/historia.html' },
+            { text: 'Gamla resultat', path: '/gamla-resultat' },
+            {
+              text: html`Rankinglista <i class="icon">open_in_new</i>`,
+              path: 'https://member.schack.se/ShowClubRatingServlet?clubid=38616',
+              openInNew: true,
+            },
+            { text: 'Klubbmästare', path: '/klubbmastare' },
+          ])}
+          ${this._renderNavItem('/nyheter', 'Nyheter')}
+          ${this._renderNavItem('/kontakt', 'Kontakt')}
         </ul>
       </nav>
     </header>`;
