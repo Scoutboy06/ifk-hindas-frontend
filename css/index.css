@@ -428,6 +428,10 @@ section {
     &::after {
       content: '';
     }
+
+    .backdrop {
+      object-fit: contain;
+    }
   }
 
   #experience {
