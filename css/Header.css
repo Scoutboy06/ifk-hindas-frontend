@@ -46,6 +46,11 @@
           color: var(--secondary);
         }
 
+        & a[disabled='true'] {
+          color: #b3b3b3 !important;
+          pointer-events: none;
+        }
+
         .nav-item {
           padding-inline: 1rem;
 
@@ -105,6 +110,11 @@
         font: inherit;
         cursor: pointer;
         transition: background-color 0.3s, color 0.3s;
+
+        & a[disabled='true'] {
+          color: #b3b3b3 !important;
+          pointer-events: none;
+        }
 
         &:hover,
         &.active {
