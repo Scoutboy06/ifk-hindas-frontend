@@ -29,18 +29,21 @@
   }
 }
 
-#text {
-  padding: 2rem var(--global-padding);
+main {
+  padding: 3rem var(--global-padding) 5rem;
 
   & h2 {
-    padding-block: 1.2rem 0.4rem;
+    padding-block: 1rem 0.4rem;
   }
 
-  & p {
-    padding-block: 0.4rem;
-  }
+  & a {
+    display: block;
+    padding-block: 0.2rem;
+    color: #0000ee;
+    text-decoration: underline;
 
-  & ul {
-    padding-left: 1rem;
+    &:visited {
+      color: #551a8b;
+    }
   }
 }

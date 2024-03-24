@@ -97,7 +97,7 @@ class Header extends LitElement {
           ])}
           ${this._renderDropdownItem('Om klubben', [
             { text: 'Historia', path: '/historia.html' },
-            { text: 'Gamla resultat', path: '/gamla-resultat', disabled: true },
+            { text: 'Gamla resultat', path: '/gamla-resultat.html' },
             {
               text: html`Rankinglista <i class="icon">open_in_new</i>`,
               path: 'https://member.schack.se/ShowClubRatingServlet?clubid=38616',
@@ -124,7 +124,7 @@ class Header extends LitElement {
           ])}
           ${this._renderDropdownItem('Om klubben', [
             { text: 'Historia', path: '/historia.html' },
-            { text: 'Gamla resultat', path: '/gamla-resultat', disabled: true },
+            { text: 'Gamla resultat', path: '/gamla-resultat.html' },
             {
               text: html`Rankinglista <i class="icon">open_in_new</i>`,
               path: 'https://member.schack.se/ShowClubRatingServlet?clubid=38616',

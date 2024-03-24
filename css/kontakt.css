@@ -24,6 +24,8 @@
   .text-container {
     color: #fff;
     font-size: 2.5rem;
+    padding-inline: var(--global-padding);
+    text-align: center;
   }
 }
 
