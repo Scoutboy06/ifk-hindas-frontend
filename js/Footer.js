@@ -61,6 +61,7 @@ class Footer extends LitElement {
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
+          title="Hitta till oss"
         ></iframe>
       </div>
 

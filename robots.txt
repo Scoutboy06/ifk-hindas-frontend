@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hindasschack.se/sitemap.xml
+Sitemap: https://www.hindasschack.se/sitemap.xml

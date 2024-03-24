@@ -38,7 +38,9 @@ main {
 
   & a {
     display: block;
-    padding-block: 0.2rem;
+    width: max-content;
+    margin-block: 0.2rem;
+    font-size: 1.1rem;
     color: #0000ee;
     text-decoration: underline;
 
