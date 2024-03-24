@@ -74,8 +74,11 @@ class Header extends LitElement {
 
   render() {
     return html`<header class="header">
-      <a href="/" class="emblem">
-        <img src="img/emblem.png" alt="IFK Hindås Emblem" />
+      <a href="/" class="logo">
+        <picture>
+          <source srcset="img/logo-md.webp" type="image/webp" />
+          <img src="img/logo-md.png" alt="IFK Hindås logga" type="image/png" />
+        </picture>
       </a>
 
       <button

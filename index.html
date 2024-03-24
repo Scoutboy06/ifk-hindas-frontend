@@ -39,13 +39,21 @@
         <div class="backdrop-container">
           <picture>
             <source
+              srcset="img/hero-image-desktop.avif"
+              media="(min-width: 425px)"
+              type="image/avif"
+            />
+            <source
               srcset="img/hero-image-desktop.jpg"
               media="(min-width: 425px)"
+              type="image/jpeg"
             />
+            <source srcset="img/hero-image-mobile.avif" type="image/avif" />
             <img
               class="backdrop"
               src="img/hero-image-mobile.jpg"
               alt="Schackkung"
+              type="image/jpeg"
             />
           </picture>
         </div>
@@ -101,10 +109,14 @@
 
         <div class="cards-container">
           <div class="card">
-            <img
-              src="img/beginner-banner.jpg"
-              alt="Young girl and boy at chess board"
-            />
+            <picture>
+              <source srcset="img/beginner-banner.avif" type="image/avif" />
+              <img
+                src="img/beginner-banner.jpg"
+                alt="Flicka och pojke vid schackbräde"
+                type="image/jpeg"
+              />
+            </picture>
             <h3>Nybörjare</h3>
             <span>För dig med lite eller ingen tidigare erfarenhet.</span>
             <a href="#" class="btn primary">
@@ -114,7 +126,14 @@
           </div>
 
           <div class="card">
-            <img src="img/experienced-banner.jpg" alt="Girl at a chess board" />
+            <picture>
+              <source srcset="img/experienced-banner.avif" type="image/avif" />
+              <img
+                src="img/experienced-banner.jpg"
+                alt="Tjej vid schackbräde"
+                type="image/jpeg"
+              />
+            </picture>
             <h3>Erfarna</h3>
             <span>För dig som är redo att börja spela turneringsmatcher.</span>
             <a href="#" class="btn primary">
@@ -124,10 +143,14 @@
           </div>
 
           <div class="card">
-            <img
-              src="img/advanced-banner.jpg"
-              alt="Professional at chess board"
-            />
+            <picture>
+              <source srcset="img/advanced-banner.avif" type="image/avif" />
+              <img
+                src="img/advanced-banner.jpg"
+                alt="Okänd person vid schackbräde"
+                type="image/jpeg"
+              />
+            </picture>
             <h3>Avancerat</h3>
             <span>För rutinerade spelare med ELO-rating.</span>
             <a href="#" class="btn primary">
@@ -150,7 +173,14 @@
         </div>
 
         <div class="right">
-          <img src="img/boy-at-chess-board.png" alt="Pojke vid schackbräde" />
+          <picture>
+            <source srcset="img/boy-at-chess-board.avif" type="image/avif" />
+            <img
+              src="img/boy-at-chess-board.jpg"
+              alt="Pojke vid schackbräde"
+              type="image/jpeg"
+            />
+          </picture>
         </div>
       </section>
 
@@ -160,10 +190,14 @@
         <div class="news-container">
           <article>
             <a href="#" class="banner">
-              <img
-                src="img/article-1.jpg"
-                alt="Hindåsrockaden 2023 19/10 - Anmäl nu!"
-              />
+              <picture>
+                <source srcset="img/article-1-lg.avif" type="image/avif" />
+                <img
+                  src="img/article-1-lg.jpg"
+                  alt="Hindåsrockaden 2023 19/10 - Anmäl nu!"
+                  type="image/jpeg"
+                />
+              </picture>
             </a>
 
             <h3 class="title">
@@ -186,7 +220,14 @@
             </p>
 
             <div class="author">
-              <img src="img/author-simon.jpg" alt="Simon Håkansson" />
+              <picture>
+                <source srcset="img/author-simon.avif" type="image/avif" />
+                <img
+                  src="img/author-simon.jpg"
+                  alt="Simon Håkansson"
+                  type="image/jpeg"
+                />
+              </picture>
 
               <span class="author-name">Simon Håkansson</span>
             </div>
@@ -199,17 +240,29 @@
 
           <article>
             <a href="#" class="banner">
-              <img src="img/article-2.jpg" alt="Blixt-KM 2023" />
+              <picture>
+                <source srcset="img/article-2-sm.avif" type="image/avif" />
+                <img
+                  src="img/article-2-sm.jpg"
+                  alt="Blixt-KM 2023"
+                  type="image/jpeg"
+                />
+              </picture>
             </a>
 
             <h3 class="title">
               <a href="#">Blixt-KM 2023</a>
             </h3>
 
-            <p class="desc"></p>
-
             <div class="author">
-              <img src="img/author-default.jpg" alt="Linus Hugo" />
+              <picture>
+                <source srcset="img/author-default.avif" type="image/avif" />
+                <img
+                  src="img/author-default.jpg"
+                  alt="Linus Hugo"
+                  type="image/jpeg"
+                />
+              </picture>
 
               <span class="author-name">Linus Hugo</span>
             </div>
@@ -222,20 +275,32 @@
 
           <article>
             <a href="#" class="banner">
-              <img
-                src="img/article-default.jpg"
-                alt="Dagens träning kl 18 försenad"
-              />
+              <picture>
+                <source
+                  srcset="img/article-default-lg.avif"
+                  type="image/avif"
+                />
+                <img
+                  src="img/article-default.jpg"
+                  alt="Dagens träning kl 18 försenad"
+                  type="image/jpeg"
+                />
+              </picture>
             </a>
 
             <h3 class="title">
               <a href="#">Dagens träning kl 18 försenad</a>
             </h3>
 
-            <p class="desc"></p>
-
             <div class="author">
-              <img src="img/author-simon.jpg" alt="Simon Håkansson" />
+              <picture>
+                <source srcset="img/author-simon.avif" type="image/avif" />
+                <img
+                  src="img/author-simon.jpg"
+                  alt="Simon Håkansson"
+                  type="image/jpeg"
+                />
+              </picture>
 
               <span class="author-name">Simon Håkansson</span>
             </div>
@@ -248,72 +313,29 @@
 
           <article>
             <a href="#" class="banner">
-              <img
-                src="img/article-default.jpg"
-                alt="Dagens träning kl 18 försenad"
-              />
-            </a>
-
-            <h3 class="title">
-              <a href="#">Dagens träning kl 18 försenad</a>
-            </h3>
-
-            <p class="desc"></p>
-
-            <div class="author">
-              <img src="img/author-simon.jpg" alt="Simon Håkansson" />
-
-              <span class="author-name">Simon Håkansson</span>
-            </div>
-
-            <div class="timestamp">
-              <i class="icon">schedule</i>
-              <span class="date">25 maj 2023</span>
-            </div>
-          </article>
-
-          <article>
-            <a href="#" class="banner">
-              <img
-                src="img/article-default.jpg"
-                alt="Dagens träning kl 18 försenad"
-              />
-            </a>
-
-            <h3 class="title">
-              <a href="#">Dagens träning kl 18 försenad</a>
-            </h3>
-
-            <p class="desc"></p>
-
-            <div class="author">
-              <img src="img/author-simon.jpg" alt="Simon Håkansson" />
-
-              <span class="author-name">Simon Håkansson</span>
-            </div>
-
-            <div class="timestamp">
-              <i class="icon">schedule</i>
-              <span class="date">25 maj 2023</span>
-            </div>
-          </article>
-
-          <article>
-            <a href="#" class="banner">
-              <img
-                src="img/article-4.jpg"
-                alt="Rond 3 i klubbmästerskapet är lottad"
-              />
+              <picture>
+                <source srcset="img/article-4-sm.avif" type="image/avif" />
+                <img
+                  src="img/article-4.jpg"
+                  alt="Rond 3 i klubbmästerskapet är lottad"
+                  type="image/jpeg"
+                />
+              </picture>
             </a>
 
             <h3 class="title">
               <a href="#">Rond 3 i klubbmästerskapet är lottad</a>
             </h3>
 
-            <p class="desc"></p>
-
             <div class="author">
-              <img src="img/author-simon.jpg" alt="Simon Håkansson" />
+              <picture>
+                <source srcset="img/author-simon.avif" type="image/avif" />
+                <img
+                  src="img/author-simon.jpg"
+                  alt="Simon Håkansson"
+                  type="image/jpeg"
+                />
+              </picture>
 
               <span class="author-name">Simon Håkansson</span>
             </div>

@@ -48,7 +48,7 @@
   .trainer {
     text-align: center;
 
-    & > img {
+    & img {
       width: 100%;
       aspect-ratio: 1;
       object-fit: cover;

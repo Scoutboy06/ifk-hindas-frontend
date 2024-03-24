@@ -12,7 +12,10 @@ class Footer extends LitElement {
   render() {
     return html`<footer id="footer">
       <a href="/" title="IFK Hindås logga" class="logo">
-        <img src="img/emblem.png" />
+        <picture>
+          <source srcset="img/logo-md.webp" type="image/webp" />
+          <img src="img/logo-md.png" alt="IFK Hindås logga" type="image/png" />
+        </picture>
       </a>
 
       <div class="nav-container">
