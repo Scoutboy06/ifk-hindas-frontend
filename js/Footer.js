@@ -2,6 +2,7 @@ import {
   html,
   LitElement,
 } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
+// Kod importerad: biblioteket Lit (https://lit.dev/)
 
 class Footer extends LitElement {
   createRenderRoot() {
