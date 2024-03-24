@@ -110,7 +110,7 @@
         cursor: pointer;
         transition: background-color 0.3s, color 0.3s;
 
-        & a {
+        & > a {
           padding: 2rem 1.2rem;
         }
 
