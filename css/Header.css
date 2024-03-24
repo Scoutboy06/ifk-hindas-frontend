@@ -104,12 +104,15 @@
         display: flex;
         align-items: center;
         height: 100%;
-        padding-inline: 1.2rem;
         position: relative;
         border-radius: var(--radius);
         font: inherit;
         cursor: pointer;
         transition: background-color 0.3s, color 0.3s;
+
+        & a {
+          padding: 2rem 1.2rem;
+        }
 
         & a[disabled='true'] {
           color: #b3b3b3 !important;
@@ -144,6 +147,7 @@
           display: flex;
           align-items: center;
           height: 100%;
+          padding-inline: 1.2rem;
 
           .icon {
             color: var(--secondary);
