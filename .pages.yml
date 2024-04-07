@@ -1,4 +1,4 @@
-media: files
+media: media
 content:
   - name: posts
     label: Nyheter
