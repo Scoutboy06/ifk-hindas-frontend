@@ -109,6 +109,7 @@ section {
   & h2 {
     margin-bottom: 2.5rem;
     text-align: center;
+    line-height: 1;
   }
 
   .cards-container {
@@ -459,5 +460,6 @@ section {
   /* Upplev spänningen i schack */
   #chess-excitement {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
   }
 }
