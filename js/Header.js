@@ -53,6 +53,34 @@ class Header extends LitElement {
     </li>`;
   }
 
+  _renderNav() {
+    return html`
+      <ul>
+        ${this._renderNavItem({ path: '/', text: 'Hem' })}
+        ${this._renderNavItem({
+          path: '/nyheter',
+          text: 'Nyheter',
+          disabled: true,
+        })}
+        ${this._renderDropdownItem('Om klubben', [
+          { text: 'Historia', path: '/historia.html' },
+          { text: 'Gamla resultat', path: '/gamla-resultat.html' },
+          {
+            text: html`Rankinglista <i class="icon">open_in_new</i>`,
+            path: 'https://member.schack.se/ShowClubRatingServlet?clubid=38616',
+            openInNew: true,
+          },
+          { text: 'Klubbmästare', path: '/klubbmastare', disabled: true },
+        ])}
+        ${this._renderNavItem({
+          path: '/kalender.html',
+          text: 'Kalender',
+        })}
+        ${this._renderNavItem({ path: '/kontakt.html', text: 'Kontakt' })}
+      </ul>
+    `;
+  }
+
   /**
    * @param {PointerEvent} e
    */
@@ -91,59 +119,9 @@ class Header extends LitElement {
         <i class="icon">menu</i>
       </button>
 
-      <nav class="mobile-nav">
-        <ul>
-          ${this._renderNavItem({ path: '/', text: 'Hem' })}
-          ${this._renderDropdownItem('Träna med oss', [
-            { text: 'Nybörjare', path: '/nyborjare', disabled: true },
-            { text: 'Erfarna', path: '/erfarna', disabled: true },
-            { text: 'Avancerat', path: '/avancerat', disabled: true },
-          ])}
-          ${this._renderDropdownItem('Om klubben', [
-            { text: 'Historia', path: '/historia.html' },
-            { text: 'Gamla resultat', path: '/gamla-resultat.html' },
-            {
-              text: html`Rankinglista <i class="icon">open_in_new</i>`,
-              path: 'https://member.schack.se/ShowClubRatingServlet?clubid=38616',
-              openInNew: true,
-            },
-            { text: 'Klubbmästare', path: '/klubbmastare', disabled: true },
-          ])}
-          ${this._renderNavItem({
-            path: '/nyheter',
-            text: 'Nyheter',
-            disabled: true,
-          })}
-          ${this._renderNavItem({ path: '/kontakt.html', text: 'Kontakt' })}
-        </ul>
-      </nav>
+      <nav class="mobile-nav">${this._renderNav()}</nav>
 
-      <nav class="top-nav">
-        <ul>
-          ${this._renderNavItem({ path: '/', text: 'Hem' })}
-          ${this._renderDropdownItem('Träna med oss', [
-            { text: 'Nybörjare', path: '/nyborjare', disabled: true },
-            { text: 'Erfarna', path: '/erfarna', disabled: true },
-            { text: 'Avancerat', path: '/avancerat', disabled: true },
-          ])}
-          ${this._renderDropdownItem('Om klubben', [
-            { text: 'Historia', path: '/historia.html' },
-            { text: 'Gamla resultat', path: '/gamla-resultat.html' },
-            {
-              text: html`Rankinglista <i class="icon">open_in_new</i>`,
-              path: 'https://member.schack.se/ShowClubRatingServlet?clubid=38616',
-              openInNew: true,
-            },
-            { text: 'Klubbmästare', path: '/klubbmastare', disabled: true },
-          ])}
-          ${this._renderNavItem({
-            path: '/nyheter',
-            text: 'Nyheter',
-            disabled: true,
-          })}
-          ${this._renderNavItem({ path: '/kontakt.html', text: 'Kontakt' })}
-        </ul>
-      </nav>
+      <nav class="top-nav">${this._renderNav()}</nav>
     </header>`;
   }
 }
